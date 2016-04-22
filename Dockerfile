@@ -8,7 +8,7 @@ ENV TW_PATH ${TW_BASE}/${TW_NAME}
 ENV TW_USER ""
 ENV TW_PASSWORD ""
 
-RUN npm install -g tiddlywiki@${TW_VERSION} && mkdir -p ${TW_BASE}
+RUN npm install --silent -g tiddlywiki@${TW_VERSION} && mkdir -p ${TW_BASE}
 
 WORKDIR ${TW_BASE}
 VOLUME [${TW_PATH}]
