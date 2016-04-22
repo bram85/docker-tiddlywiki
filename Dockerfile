@@ -11,7 +11,7 @@ ENV TW_PASSWORD ""
 RUN npm install --silent -g tiddlywiki@${TW_VERSION} && mkdir -p ${TW_BASE}
 
 WORKDIR ${TW_BASE}
-VOLUME [${TW_PATH}]
+VOLUME ${TW_PATH}
 
 ADD ./run-tiddlywiki.sh /usr/local/bin
 
