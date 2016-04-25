@@ -16,3 +16,28 @@ Environment variables
 * TW_PASSWORD: password for HTTP Basic authentication for signing edits.
                Defaults to no password.
 
+Runnig TiddlyWiki behind a reverse proxy (nginx)
+------------------------------------------------
+
+Suppose you run TiddlyWiki as a subdirectory of some domain, for example
+https://example.org/notes. TiddlyWiki doesn't support this, but you can use
+nginx to work around this.
+
+Use the following configuration:
+
+```
+location /notes/ {
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_pass http://localhost:8080/;
+          proxy_redirect default;
+}
+
+# Only if you run TiddlyWiki in a subdirectory instead of a subdomain
+location ~ ^/(status|recipes|bags) {
+  if ($http_referer = https://example.org/notes/) {
+    rewrite ^(.*)$ /notes$1;
+  }
+}
+```
