@@ -19,7 +19,7 @@ Environment variables
            'images' or 'all'. By default no lazy loading is applied, so all
            content is loaded at once.
 
-Runnig TiddlyWiki behind a reverse proxy (nginx)
+Running TiddlyWiki behind a reverse proxy (nginx)
 ------------------------------------------------
 
 Suppose you run TiddlyWiki as a subdirectory of some domain, for example
