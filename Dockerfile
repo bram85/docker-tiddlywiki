@@ -1,7 +1,7 @@
 FROM node:5
 MAINTAINER Bram Schoenmakers <me@bramschoenmakers.nl>
 
-ENV TW_BASE=/usr/src/app TW_NAME=wiki TW_USER="" TW_PASSWORD=""
+ENV TW_BASE=/usr/src/app TW_NAME=wiki TW_USER="" TW_PASSWORD="" TW_LAZY=""
 ENV TW_PATH ${TW_BASE}/${TW_NAME}
 
 WORKDIR ${TW_BASE}

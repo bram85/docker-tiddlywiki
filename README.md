@@ -15,6 +15,9 @@ Environment variables
            to an empty username (no sign-offs).
 * TW_PASSWORD: password for HTTP Basic authentication for signing edits.
                Defaults to no password.
+* TW_LAZY: whether the instance should use lazy loading. It accepts two values:
+           'images' or 'all'. By default no lazy loading is applied, so all
+           content is loaded at once.
 
 Runnig TiddlyWiki behind a reverse proxy (nginx)
 ------------------------------------------------
