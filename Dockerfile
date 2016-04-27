@@ -1,4 +1,4 @@
-FROM node:5
+FROM node:6
 MAINTAINER Bram Schoenmakers <me@bramschoenmakers.nl>
 
 ENV TW_BASE=/usr/src/app TW_NAME=wiki TW_USER="" TW_PASSWORD="" TW_LAZY=""
